@@ -114,7 +114,7 @@ function hienThiChiTiet(id) {
         getELE("gioLam").value = dsnv.mangNV[viTri].gioLam;
     }
 
-    // getELE("btnThemNV").disabled = true;
+    getELE("btnThemNV").disabled = true;
 }
 
 function capNhatNhanVien() {
@@ -148,4 +148,5 @@ getELE("searchName").onkeyup = function() {
 function resetForm() {
     getELE("formQLNV").reset();
     getELE("tknv").disabled = false;
+    getELE("btnThemNV").disabled = false;
 }
