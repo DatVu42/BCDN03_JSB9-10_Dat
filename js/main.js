@@ -115,6 +115,7 @@ function hienThiChiTiet(id) {
     }
 
     getELE("btnThemNV").disabled = true;
+    getELE("btnCapNhat").disabled = false;
 }
 
 function capNhatNhanVien() {
@@ -149,4 +150,22 @@ function resetForm() {
     getELE("formQLNV").reset();
     getELE("tknv").disabled = false;
     getELE("btnThemNV").disabled = false;
+
+    resetSpan("tbTKNV");
+    resetSpan("tbTen");
+    resetSpan("tbEmail");
+    resetSpan("tbMatKhau");
+    resetSpan("tbNgay");
+    resetSpan("tbLuongCB");
+    resetSpan("tbChucVu");
+    resetSpan("tbGiolam");
+}
+
+function resetSpan(spanID) {
+    getELE(spanID).innerHTML = "";
+    getELE(spanID).style.display = "none";
+}
+
+function disableBtnCapNhat() {
+    getELE("btnCapNhat").disabled = true;
 }
