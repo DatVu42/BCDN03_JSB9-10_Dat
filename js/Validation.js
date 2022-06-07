@@ -81,7 +81,7 @@ function Validation() {
     }
 
     this.kiemTraLuongCB = function(value, spanID, message) {
-        var pattern = /^(\d{1,2}(\.\d{1,2})?)$/;
+        var pattern = /^[0-9]+$/;
         if (value.match(pattern) && value >= 1000000 && value <= 20000000) {
             document.getElementById(spanID).innerHTML = "";
             document.getElementById(spanID).style.display = "none";
@@ -93,8 +93,8 @@ function Validation() {
         return false;
     }
 
-    this.kiemTraLuongGioLam = function(value, spanID, message) {
-        var pattern = /^(\d{1,2}(\.\d{1,2})?)$/;
+    this.kiemTraGioLam = function(value, spanID, message) {
+        var pattern = /^[0-9]+$/;
         if (value.match(pattern) && value >= 80 && value <= 200) {
             document.getElementById(spanID).innerHTML = "";
             document.getElementById(spanID).style.display = "none";

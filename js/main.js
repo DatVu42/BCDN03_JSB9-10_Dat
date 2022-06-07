@@ -28,6 +28,8 @@ function themNhanVien() {
     var chucVu = getELE("chucvu").value;
     var gioLam = getELE("gioLam").value;
 
+    // console.log(typeof luongCB);
+
     var isValid = true;
 
     // Kiểm tra Tài khoản
@@ -56,10 +58,10 @@ function themNhanVien() {
 
     // Kiểm tra giờ làm
     isValid &= validation.kiemTraRong(gioLam, "tbGiolam", "Giờ làm không được để trống") &&
-    validation.kiemTraLuongCB(gioLam, "tbGiolam", "Giờ làm trong tháng từ 80 đến 200 giờ");
+    validation.kiemTraGioLam(gioLam, "tbGiolam", "Giờ làm trong tháng từ 80 đến 200 giờ");
 
     if (isValid) {
-        var nv = new NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luongCB, chucVu, gioLam);
+        var nv = new NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, Number(luongCB), chucVu, Number(gioLam));
         nv.tinhTongLuong();
         nv.xepLoaiNV();
     
